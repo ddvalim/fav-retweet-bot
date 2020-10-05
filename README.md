@@ -22,4 +22,4 @@ O projeto foi desenvolvido como forma de estudo da linguagem Python
 
 ### Informações
 
-O desenvolvimento do projeto foi acompanhado pela escrita de um artigo no site [Medium](https://medium.com/@diovanavalimm/criando-um-bot-de-twitter-usando-python-a22e086dcb04), que faz um tutorial prático de como criar um bot de Twitter.
+O desenvolvimento do projeto foi acompanhado pela escrita de um [artigo](https://medium.com/@diovanavalimm/criando-um-bot-de-twitter-usando-python-a22e086dcb04) no site Medium, que faz um tutorial prático de como criar um bot de Twitter.
