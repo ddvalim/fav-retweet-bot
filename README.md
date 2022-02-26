@@ -13,12 +13,12 @@
 
 ### Tecnologia
 
-O exercício foi desenvolvido utilizando a linguagem Python e a biblioteca TweetPy.
+O exercício foi desenvolvido utilizando a linguagem Python e a biblioteca TweePy.
 
 ### Autor
 
-A autora do projeto é Diovana Rodrigues Valim, graduanda da terceira fase de Sistemas de Informação na Universidade Federal de Santa Catarina.
-O projeto foi desenvolvido como forma de estudo da linguagem Python
+A autora do projeto é Diovana Rodrigues Valim, graduanda da sexta fase de Sistemas de Informação na Universidade Federal de Santa Catarina.
+O projeto foi desenvolvido como forma de estudo da linguagem Python.
 
 ### Informações
 
