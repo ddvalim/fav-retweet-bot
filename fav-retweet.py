@@ -7,38 +7,45 @@ from config import create_api
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
-class FavRetweet(tweepy.StreamListener):
+class FavRetweet(tweepy.Stream):
     def __init__(self, api):
         self.api = api
         self.me = api.me()
 
     def on_status(self, tweet):
-        logger.info(f"processing tweet id {tweet.id}")
-        if tweet.user.id == self.me.id:
+        logger.info(f"processing tweet id {tweet['id']}")
+        if tweet['user']['id'] == self.me.id:
             return
-        if not tweet.favorited:
+        if not tweet['favorited']:
             try:
-                tweet.favorite()
+                self.api.create_favorite(tweet['id'])
             except Exception as e:
                 logger.error("Error on fav", exc_info=True)
-                raise e
-        if not tweet.retweeted:
+                return
+        if not tweet['retweeted']:
             try:
-                tweet.retweet()
+                self.api.retweet(tweet['id'])
             except Exception as e:
                 logger.error("Error on retweet", exc_info=True)
-                raise e
+                return
     
-    def on_error(self, status):
+    def on_exception(self, status):
+        print('Something went wrong! :c')
         logger.error(status)
     
+    def on_data(self, obj):
+        print('Receiving data from Twitter API =)')
+        self.on_status(json.loads(obj))
+    
+    def on_connect(self):
+        print('Bot is Online! :)')
 
 def main(keywords):
     api = create_api()
     tweets_listener = FavRetweet(api)
-    stream = tweepy.Stream(api.auth, tweets_listener)
+    stream = tweepy.Stream(api.auth, listener=tweets_listener)
     stream.filter(track=keywords, languages=["pt"])
 
 
 if __name__ == "__main__":
-    main(['Python'])
+    main(['lula'])
