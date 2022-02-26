@@ -9,13 +9,13 @@ def create_api():
 
     consumer_key = os.getenv("CONSUMER_KEY")
     consumer_secret = os.getenv("CONSUMER_SECRET")
-    acess_token = os.getenv("ACESS_TOKEN")
-    acess_token_secret = os.getenv("ACESS_TOKEN_SECRET")
+    access_token = os.getenv("ACCESS_TOKEN")
+    access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
 
     # As linhas abaixo colocam em variáveis os dados obtidos
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(acess_token, acess_token_secret)
+    auth.set_access_token(access_token, access_token_secret)
 
     # Esta linha cria o objeto que representa uma instância da API do twitter
 
